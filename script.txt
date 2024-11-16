@@ -1,0 +1,20 @@
+create table Employee
+(
+E_Id int primary key Identity,
+D_ID int constraint fk_DID foreign key references Department(D_Id),
+E_Name nvarchar(100),
+E_Address nvarchar(100),
+E_Phone nvarchar(100))
+
+
+
+CREATE TABLE [dbo].[Department](
+	[D_Id] [int] IDENTITY(1,1) NOT NULL,
+	[D_Name] [nvarchar](100) NULL,
+	[D_Description] [nvarchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[D_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
